@@ -1,4 +1,4 @@
-// Arrays to keep track of each task's state
+/*// Arrays to keep track of each task's state
 const taskTitles = [];
 const taskComplete = [];
 
@@ -21,6 +21,8 @@ function logTaskState(taskIndex) {
   console.log(`${title} has${complete ? " " : " not "}been completed`);
 }
 
+
+
 // DRIVER CODE BELOW
 
 newTask("Clean Cat Litter"); // task 0
@@ -29,3 +31,23 @@ newTask("Do Laundry"); // task 1
 logTaskState(0); // Clean Cat Litter has not been completed
 completeTask(0);
 logTaskState(0); // Clean Cat Litter has been completed
+*/
+
+function newTask (title) {
+  const task = {
+    title: title,
+    completed: false,
+    markCompleted: function () {
+      return this.completed = true;
+    },
+    printState: function() {
+      console.log(`${this.title} has${this.completed ? " " : " not "}been completed`);
+    }
+  }
+  return task;
+};
+let task0 = newTask("Clean Cat Litter");
+task0.printState();
+task0.markCompleted();
+task0.printState();
+let task1 = newTask("Do Laundry"); // task 1
